@@ -1,0 +1,770 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px '.AppleSystemUIFontMonospaced Semibold'}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px '.AppleSystemUIFontMonospaced Semibold'; min-height: 15.0px}
+    span.s1 {font: 12.0px '.AppleSystemUIFontMonospaced'}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><b>&lt;!DOCTYPE html&gt;</b></span></p>
+<p class="p1"><span class="s1"><b>&lt;html lang="en"&gt;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b>&lt;head&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;title&gt;Werner Herzog Quote Generator&lt;/title&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;style&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>:root {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>/* Button yellow */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>--btn-gold: #f4c542;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>/* Label color (Wehmut) */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>--thumb-blue: #4da3ff;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>/* Slider fill/thumb matches "Wehmut" */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>--slider-fill: var(--thumb-blue);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: #111;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>color: #eee;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>@font-face {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-family: "Plane Crash";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>src: url("./fonts/PlaneCrash.woff2") format("woff2");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-display: swap;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>@font-face {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-family: "Leander";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>src: url("./fonts/Leander.woff2") format("woff2");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-display: swap;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>@font-face {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-family: "Cheap Potato Black";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>src: url("./fonts/CheapPotatoBlack.woff2") format("woff2");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-display: swap;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>body {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>margin: 0;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>min-height: 100vh;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>display: flex;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>align-items: center;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>justify-content: center;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>.container {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>max-width: 760px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>width: min(760px, 92vw);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>padding: 24px 20px 40px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>text-align: center;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: #181818;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius: 12px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border: 1px solid #333;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>h2 {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>margin: 0 0 0.4rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>text-transform: uppercase;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>letter-spacing: 0.05em;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-size: 1.35rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>.subtitle {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>margin: 0 0 1.4rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-size: 0.9rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>color: #aaa;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>.sliderWrapper {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>margin: 0 0 1.4rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>text-align: center;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>.sliderRow {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>display: grid;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>grid-template-columns: auto 1fr auto;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>gap: 12px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>align-items: center;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>width: min(680px, 90vw);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>margin: 0.55rem auto 0;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>.sliderLabel {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>color: var(--thumb-blue);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-size: 0.85rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>white-space: nowrap;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* ---- Range styling: filled track reflects current value in "Wehmut" color ---- */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>input[type="range"] {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>width: 100%;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>accent-color: var(--slider-fill);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: transparent;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>margin: 0;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>--range-progress: 40%;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* WebKit */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>input[type="range"]::-webkit-slider-runnable-track {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>height: 6px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius: 999px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: linear-gradient(to right,</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>var(--slider-fill) 0%,</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>var(--slider-fill) var(--range-progress),</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>#3a3a3a var(--range-progress),</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>#3a3a3a 100%);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>input[type="range"]::-webkit-slider-thumb {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>-webkit-appearance: none;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>appearance: none;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>width: 18px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>height: 18px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius: 50%;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: var(--slider-fill);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border: 2px solid rgba(255, 255, 255, 0.35);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>margin-top: -6px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* Firefox */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>input[type="range"]::-moz-range-track {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>height: 6px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius: 999px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: linear-gradient(to right,</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>var(--slider-fill) 0%,</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>var(--slider-fill) var(--range-progress),</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>#3a3a3a var(--range-progress),</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>#3a3a3a 100%);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>input[type="range"]::-moz-range-thumb {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>width: 18px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>height: 18px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius: 50%;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: var(--slider-fill);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border: 2px solid rgba(255, 255, 255, 0.35);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>input[type="range"]:focus-visible {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>outline: 2px solid rgba(77, 163, 255, 0.45);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>outline-offset: 6px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius: 12px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>.buttons {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>display: flex;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>justify-content: center;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>gap: 0.6rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>flex-wrap: wrap;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>button {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>appearance: none;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border: none;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>padding: 0.75rem 1.6rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius: 999px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-weight: 700;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-size: 0.95rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>cursor: pointer;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>transition: 0.12s;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>#generateBtn {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: var(--btn-gold);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>color: #111;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>#copyBtn {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: #333;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>color: #eee;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>/* Reduced text size */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-size: 0.82rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>padding: 0.62rem 1.25rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>#generateBtn:hover {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: #ffd95c;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>#copyBtn:hover {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: #444;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>.quoteCard {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>margin: 1.2rem auto;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>width: min(680px, 90vw);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>aspect-ratio: 16 / 9;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius: 14px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>overflow: hidden;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>position: relative;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>border: 1px solid #333;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: #0f0f0f;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background-size: cover;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background-position: center;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>.quoteOverlay {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>position: absolute;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>inset: 0;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>background: radial-gradient(circle at 30% 30%, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.78));</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>.quoteText {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>position: absolute;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>inset: 0;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>display: grid;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>place-items: center;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>padding: 48px 44px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>text-align: center;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>line-height: 1.12;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>color: #f2f2f2;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>overflow: hidden;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>user-select: text;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>.quoteText span {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>display: block;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>width: 100%;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>max-width: 100%;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>white-space: normal;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>word-break: normal;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>overflow-wrap: normal;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>hyphens: none;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>letter-spacing: 0.02em;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-size: 52px;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>#copyStatus {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>margin-top: 0.6rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font-size: 0.82rem;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>color: #9a9a9a;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>min-height: 1em;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>canvas {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>display: none;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;/style&gt;</b></span></p>
+<p class="p1"><span class="s1"><b>&lt;/head&gt;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b>&lt;body&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;main class="container"&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;h2&gt;Werner Herzog Quote Generator&lt;/h2&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;p class="subtitle"&gt;Reflections on an indifferent universe&lt;/p&gt;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;div class="sliderWrapper"&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;strong&gt;Herzog Scale&lt;/strong&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;div class="sliderRow"&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;span class="sliderLabel"&gt;Wehmut&lt;/span&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;input type="range" id="herzogScale" min="0" max="10" step="2" value="4" aria-label="Herzog Scale"&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;span class="sliderLabel"&gt;Sinnnichtigkeit&lt;/span&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;/div&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;/div&gt;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;div class="buttons"&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;button id="generateBtn"&gt;Generate Quote&lt;/button&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;/div&gt;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;div id="quoteCard" class="quoteCard" role="img" aria-label="Generated quote image"&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;div class="quoteOverlay"&gt;&lt;/div&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;div class="quoteText"&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;span id="quoteText"&gt;Click “Generate Quote.” Or do not. The Universe is indifferent.&lt;/span&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;/div&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;/div&gt;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;div class="buttons"&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;button id="copyBtn" style="font-size: 0.79rem;"&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>Copy. Or Don't. It Changes Nothing.</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;/button&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;/div&gt;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;div id="copyStatus"&gt;&lt;/div&gt;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;canvas id="renderCanvas" width="1600" height="900"&gt;&lt;/canvas&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;/main&gt;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;script&gt;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* ----------------------------</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">       </span>Assets</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>---------------------------- */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>const imageUrls = [</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"./images/Image1.png",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"./images/Image2.png",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"./images/Image3.png",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"./images/Image4.png",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"./images/Image5.png",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"./images/Image6.png",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"./images/Image7.png",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"./images/Image8.png",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"./images/Image9.png"</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>];</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>imageUrls.forEach(u =&gt; { const i = new Image(); i.src = u; });</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>const fontChoices = ["Plane Crash", "Leander", "Cheap Potato Black"];</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* ----------------------------</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">       </span>Slider fill handling</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>---------------------------- */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function setSliderProgress(sliderEl) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const min = Number(sliderEl.min || 0);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const max = Number(sliderEl.max || 100);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const val = Number(sliderEl.value);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const pct = ((val - min) / (max - min)) * 100;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>sliderEl.style.setProperty("--range-progress", `${pct}%`);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* ----------------------------</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">       </span>Phrase pools</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>---------------------------- */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>const openings = [</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"Consider",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"Observe",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"Notice",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"Witness",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"Do not look away from",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"Briefly,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"In the silence,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"Look closely,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"Here we see",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"For a moment,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"Inevitable,"</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>];</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>const subjects = [</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"the empty street,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"this abandoned chair,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"the flickering light,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"a weary animal,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"the cold ground,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"discarded potential,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"chaos and darkness,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"a forgotten object,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"the unmoving landscape,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"the unattended doorway,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"a dim corridor,"</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>];</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>const observations = [</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"a plain fact of passing time,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"a quiet hint of decay,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"it does not show truth,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"a witness to slow collapse,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"a dinosaur that does not know it is dead,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"a monument to indifference,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"an echo of wasted effort,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"like an ancient Greek tragedy,",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"a ledger of small defeats,"</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>];</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>const shortEndings = [</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"and it asks nothing of us.",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"and it does not change because we notice.",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"yet we are left with only the fact of it.",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"so the day continues without explanation.",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"and it remains, quietly, what it is.",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"and no meaning arrives to meet it."</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>];</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>const endings = [</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"and we move on, pretending it meant something.",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"yet the world does not respond, not even with contempt.",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"as time continues without concern for our explanations.",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"so meaning dissolves, leaving only the habit of belief.",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"while the universe remains unmoved by our brief insistence.",</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>"and still we call this endurance, as if it were a virtue."</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>];</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* ----------------------------</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">       </span>Non-repetition (recent history)</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>---------------------------- */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>const history = {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>openings: [],</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>subjects: [],</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>observations: [],</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>shortEndings: [],</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>endings: [],</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>bgUrl: [],</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>font: []</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>};</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function pushHistory(key, value, maxLen) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (!value) return;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>history[key].unshift(value);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (history[key].length &gt; maxLen) history[key].length = maxLen;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>const randomFrom = arr =&gt; arr[Math.floor(Math.random() * arr.length)];</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function pickNonRepeating(arr, recentKey, avoidCount, maxTries = 60) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (!arr.length) return "";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const avoid = new Set(history[recentKey].slice(0, avoidCount));</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>for (let i = 0; i &lt; maxTries; i++) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const candidate = randomFrom(arr);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>if (!avoid.has(candidate)) return candidate;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>return randomFrom(arr);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function pickWeightedNonRepeating(arr, scale, recentKey, avoidCount) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const pivot = Math.floor(arr.length * (scale / 10));</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const spread = 2;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const min = Math.max(0, pivot - spread);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const max = Math.min(arr.length - 1, pivot + spread);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const windowArr = arr.slice(min, max + 1);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>return pickNonRepeating(windowArr, recentKey, avoidCount);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* ----------------------------</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">       </span>Consecutive quote repetition rule:</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">       </span>No two subsequent quotes share &gt; 2 identical phrase-parts.</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>---------------------------- */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>let lastParts = null;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function repeatedPartCount(a, b) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (!a || !b) return 0;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const fields = ["o", "s", "obs", "e"];</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>let count = 0;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>for (const f of fields) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const av = (a[f] || "").trim();</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const bv = (b[f] || "").trim();</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>if (av &amp;&amp; bv &amp;&amp; av === bv) count++;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>return count;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>const singleWordOpenings = new Set(["Consider", "Observe", "Notice", "Witness"]);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>let lastOpeningWasSingle = false;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function pickOpening() {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>let o = pickNonRepeating(openings, "openings", 4);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (lastOpeningWasSingle) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>for (let i = 0; i &lt; 20; i++) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>const candidate = pickNonRepeating(openings, "openings", 4);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>if (!singleWordOpenings.has(candidate)) { o = candidate; break; }</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>}</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>lastOpeningWasSingle = singleWordOpenings.has(o);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>return o;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function buildQuoteOnce(scale) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const o = pickOpening();</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const s = pickWeightedNonRepeating(subjects, scale, "subjects", 3);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (scale &lt;= 2) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const e = pickWeightedNonRepeating(shortEndings, scale, "shortEndings", 3);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>return { quote: [o, s, e].join(" "), parts: { o, s, obs: "", e }, tier: "short" };</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const obs = pickWeightedNonRepeating(observations, scale, "observations", 3);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (scale &lt;= 6) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const e = pickWeightedNonRepeating(shortEndings, scale, "shortEndings", 3);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>return { quote: [o, s, obs, e].join(" "), parts: { o, s, obs, e }, tier: "medium" };</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const e = pickWeightedNonRepeating(endings, scale, "endings", 3);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>return { quote: [o, s, obs, e].join(" "), parts: { o, s, obs, e }, tier: "long" };</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function buildQuote(scale) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const maxAttempts = 30;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>for (let i = 0; i &lt; maxAttempts; i++) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const built = buildQuoteOnce(scale);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>if (!lastParts) return built;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>if (repeatedPartCount(built.parts, lastParts) &lt;= 2) return built;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>return buildQuoteOnce(scale);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* ----------------------------</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">       </span>State + render</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>---------------------------- */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>const state = { quote: "", bgUrl: "", font: "" };</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function applyQuoteCard() {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const card = document.getElementById("quoteCard");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const text = document.getElementById("quoteText");</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>card.style.backgroundImage = `url("${state.bgUrl}")`;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>text.style.fontFamily = `"${state.font}", system-ui, sans-serif`;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>text.textContent = state.quote;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>document.getElementById("copyStatus").textContent = "";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function getInnerBox(el) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const cs = getComputedStyle(el);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>return { w: el.clientWidth - padX, h: el.clientHeight - padY };</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function fitQuoteTextToCard() {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const wrapper = document.querySelector(".quoteText");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const textEl = document.getElementById("quoteText");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const { w: maxW, h: maxH } = getInnerBox(wrapper);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (maxW &lt;= 0 || maxH &lt;= 0) return;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>textEl.style.maxWidth = maxW + "px";</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>let lo = 18, hi = 84, best = lo;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const fits = (size) =&gt; {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>textEl.style.fontSize = size + "px";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>return textEl.scrollWidth &lt;= maxW + 1 &amp;&amp; textEl.scrollHeight &lt;= maxH + 1;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>};</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (fits(hi)) { textEl.style.fontSize = hi + "px"; return; }</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>while (lo &lt;= hi) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const mid = (lo + hi) &gt;&gt; 1;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>if (fits(mid)) { best = mid; lo = mid + 1; }</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>else { hi = mid - 1; }</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>textEl.style.fontSize = best + "px";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>async function generate() {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const scaleEl = document.getElementById("herzogScale");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const scale = Number(scaleEl.value);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>setSliderProgress(scaleEl);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const built = buildQuote(scale);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>state.quote = built.quote;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>state.bgUrl = pickNonRepeating(imageUrls, "bgUrl", 2);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>state.font = pickNonRepeating(fontChoices, "font", 2);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>try { await document.fonts.load(`48px "${state.font}"`); } catch { }</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>applyQuoteCard();</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>requestAnimationFrame(() =&gt; fitQuoteTextToCard());</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>pushHistory("openings", built.parts.o, 10);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>pushHistory("subjects", built.parts.s, 6);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (built.parts.obs) pushHistory("observations", built.parts.obs, 6);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (built.tier === "long") pushHistory("endings", built.parts.e, 6);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>else pushHistory("shortEndings", built.parts.e, 6);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>pushHistory("bgUrl", state.bgUrl, 4);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>pushHistory("font", state.font, 4);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>lastParts = { ...built.parts };</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* ----------------------------</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">       </span>Canvas export (copy/share)</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">       </span>Wrap ONLY on spaces (no hyphenation).</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>---------------------------- */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function loadImage(url) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>return new Promise((resolve, reject) =&gt; {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const img = new Image();</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>img.crossOrigin = "anonymous";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>img.onload = () =&gt; resolve(img);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>img.onerror = reject;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>img.src = url;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>});</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function drawCover(ctx, img, w, h) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const iw = img.naturalWidth || img.width;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const ih = img.naturalHeight || img.height;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const s = Math.max(w / iw, h / ih);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const sw = iw * s, sh = ih * s;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const sx = (w - sw) / 2, sy = (h - sh) / 2;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.drawImage(img, sx, sy, sw, sh);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function wrapLines(ctx, text, maxWidth) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const words = text.split(/\s+/);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const lines = [];</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>let line = "";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>for (const word of words) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const test = line ? (line + " " + word) : word;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>if (ctx.measureText(test).width &lt;= maxWidth) line = test;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>else {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>if (line) lines.push(line);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>line = word;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>}</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (line) lines.push(line);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>return lines;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>async function renderQuoteToCanvas() {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const canvas = document.getElementById("renderCanvas");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const ctx = canvas.getContext("2d");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const W = canvas.width, H = canvas.height;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.clearRect(0, 0, W, H);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const bg = await loadImage(state.bgUrl);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>drawCover(ctx, bg, W, H);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const grd = ctx.createRadialGradient(W * 0.30, H * 0.30, 10, W * 0.30, H * 0.30, Math.max(W, H));</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>grd.addColorStop(0, "rgba(0,0,0,0.25)");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>grd.addColorStop(1, "rgba(0,0,0,0.78)");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.fillStyle = grd;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.fillRect(0, 0, W, H);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const padX = Math.round(W * 0.065);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const padY = Math.round(H * 0.125);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const maxTextWidth = W - padX * 2;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const maxTextHeight = H - padY * 2;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>let fontSize = 84;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const minFont = 24;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>try { await document.fonts.load(`${fontSize}px "${state.font}"`); } catch { }</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.textAlign = "center";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.textBaseline = "middle";</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const fits = (size) =&gt; {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>ctx.font = `700 ${size}px "${state.font}", system-ui, sans-serif`;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const lines = wrapLines(ctx, state.quote, maxTextWidth);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const lineHeight = Math.round(size * 1.15);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>return (lines.length * lineHeight) &lt;= maxTextHeight;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>};</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>while (fontSize &gt; minFont &amp;&amp; !fits(fontSize)) fontSize -= 2;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.font = `700 ${fontSize}px "${state.font}", system-ui, sans-serif`;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const lines = wrapLines(ctx, state.quote, maxTextWidth);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const lineHeight = Math.round(fontSize * 1.15);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const totalHeight = lines.length * lineHeight;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.shadowColor = "rgba(0,0,0,0.85)";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.shadowBlur = 18;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.shadowOffsetX = 0;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.shadowOffsetY = 3;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.fillStyle = "#f2f2f2";</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const startY = (H / 2) - (totalHeight / 2) + (lineHeight / 2);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>for (let i = 0; i &lt; lines.length; i++) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>ctx.fillText(lines[i], W / 2, startY + i * lineHeight);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.shadowColor = "transparent";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.shadowBlur = 0;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.shadowOffsetX = 0;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>ctx.shadowOffsetY = 0;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>return canvas;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>function downloadBlob(blob, filename) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const url = URL.createObjectURL(blob);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const a = document.createElement("a");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>a.href = url;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>a.download = filename;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>document.body.appendChild(a);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>a.click();</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>a.remove();</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>URL.revokeObjectURL(url);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* </b>✅<b> FIX: robust PNG blob creation (older Safari can lack canvas.toBlob) */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>async function canvasToPngBlob(canvas) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (canvas.toBlob) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const blob = await new Promise(resolve =&gt; canvas.toBlob(resolve, "image/png", 0.92));</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>if (!blob) throw new Error("PNG blob creation failed");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>return blob;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>// Fallback: toDataURL -&gt; Blob</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const dataUrl = canvas.toDataURL("image/png");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const res = await fetch(dataUrl);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const blob = await res.blob();</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (!blob || !blob.size) throw new Error("PNG blob creation failed (fallback)");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>return blob;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* </b>✅<b> FIX: if clipboard write fails (common on http/file), fall through to share/download */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>async function copyQuoteImage() {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>const status = document.getElementById("copyStatus");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>status.textContent = "";</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>let blob;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>try {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const canvas = await renderQuoteToCanvas();</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>blob = await canvasToPngBlob(canvas);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>} catch {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>status.textContent = "Could not export image — try generating again.";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>setTimeout(() =&gt; { status.textContent = ""; }, 2200);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>return;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>// 1) Try clipboard (may fail due to permissions / insecure context)</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>if (navigator.clipboard &amp;&amp; window.ClipboardItem) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>try {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>status.textContent = "Copied image to clipboard.";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>setTimeout(() =&gt; { status.textContent = ""; }, 2200);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>return;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>} catch {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>// continue to share/download</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>}</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>// 2) Try share sheet</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>try {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>const file = new File([blob], "herzog-quote.png", { type: "image/png" });</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>if (navigator.canShare &amp;&amp; navigator.canShare({ files: [file] }) &amp;&amp; navigator.share) {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>await navigator.share({ files: [file], title: "Herzog-ish Oracle" });</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>status.textContent = "Opened share sheet.";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>setTimeout(() =&gt; { status.textContent = ""; }, 2200);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">          </span>return;</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>}</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>} catch {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">        </span>// continue to download</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>// 3) Fallback: download</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>downloadBlob(blob, "herzog-quote.png");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>status.textContent = "Downloaded PNG instead.";</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>setTimeout(() =&gt; { status.textContent = ""; }, 2200);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>/* ----------------------------</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">       </span>Wire up UI</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>---------------------------- */</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>const scaleEl = document.getElementById("herzogScale");</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>document.getElementById("generateBtn").addEventListener("click", generate);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>document.getElementById("copyBtn").addEventListener("click", copyQuoteImage);</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>scaleEl.addEventListener("input", () =&gt; {</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>setSliderProgress(scaleEl);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">      </span>generate();</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>});</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>window.addEventListener("resize", () =&gt; requestAnimationFrame(fitQuoteTextToCard));</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>setSliderProgress(scaleEl);</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">    </span>generate();</b></span></p>
+<p class="p1"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;/script&gt;</b></span></p>
+<p class="p1"><span class="s1"><b>&lt;/body&gt;</b></span></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p1"><span class="s1"><b>&lt;/html&gt;</b><b></b></span></p>
+</body>
+</html>
