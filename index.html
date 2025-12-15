@@ -6,16 +6,21 @@
   <title>Werner Herzog Quote Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- ✅ FAVICONS (username-independent, correct for ThinkyFun) -->
-  <link rel="icon" href="/herzog-quote/favicon/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/herzog-quote/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/herzog-quote/favicon/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/herzog-quote/favicon/favicon-180x180.png">
+  <!-- ✅ FAVICONS (updated for new repo name: HerzogQuoteGenerator) -->
+  <link rel="icon" href="/HerzogQuoteGenerator/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/HerzogQuoteGenerator/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/HerzogQuoteGenerator/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/HerzogQuoteGenerator/favicon/favicon-180x180.png">
 
   <style>
     :root {
+      /* Button yellow */
       --btn-gold: #f4c542;
+
+      /* Label color (Wehmut) */
       --thumb-blue: #4da3ff;
+
+      /* Slider fill/thumb matches "Wehmut" */
       --slider-fill: var(--thumb-blue);
 
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -24,8 +29,8 @@
     }
 
     @font-face {
-      font-family: "Cheap Potatoes Black";
-      src: url("./fonts/CheapPotatoesBlack.woff2") format("woff2");
+      font-family: "Manic Depressive";
+      src: url("./fonts/ManicDepressive.woff2") format("woff2");
       font-display: swap;
     }
 
@@ -36,8 +41,8 @@
     }
 
     @font-face {
-      font-family: "Manic Depressive";
-      src: url("./fonts/ManicDepressive.woff2") format("woff2");
+      font-family: "Special Elite";
+      src: url("./fonts/SpecialElite.woff2") format("woff2");
       font-display: swap;
     }
 
@@ -57,7 +62,7 @@
       background: #181818;
       border-radius: 12px;
       border: 1px solid #333;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
     }
 
     h2 {
@@ -74,7 +79,8 @@
     }
 
     .sliderWrapper {
-      margin-bottom: 1.4rem;
+      margin: 0 0 1.4rem;
+      text-align: center;
     }
 
     .sliderRow {
@@ -92,6 +98,7 @@
       white-space: nowrap;
     }
 
+    /* Filled track reflects current value in "Wehmut" color */
     input[type="range"] {
       width: 100%;
       accent-color: var(--slider-fill);
@@ -100,26 +107,53 @@
       --range-progress: 40%;
     }
 
+    /* WebKit */
     input[type="range"]::-webkit-slider-runnable-track {
       height: 6px;
       border-radius: 999px;
-      background: linear-gradient(
-        to right,
-        var(--slider-fill) 0%,
-        var(--slider-fill) var(--range-progress),
-        #3a3a3a var(--range-progress),
-        #3a3a3a 100%
-      );
+      background: linear-gradient(to right,
+          var(--slider-fill) 0%,
+          var(--slider-fill) var(--range-progress),
+          #3a3a3a var(--range-progress),
+          #3a3a3a 100%);
     }
 
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
+      appearance: none;
       width: 18px;
       height: 18px;
       border-radius: 50%;
       background: var(--slider-fill);
-      border: 2px solid rgba(255,255,255,0.35);
+      border: 2px solid rgba(255, 255, 255, 0.35);
       margin-top: -6px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Firefox */
+    input[type="range"]::-moz-range-track {
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(to right,
+          var(--slider-fill) 0%,
+          var(--slider-fill) var(--range-progress),
+          #3a3a3a var(--range-progress),
+          #3a3a3a 100%);
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--slider-fill);
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    input[type="range"]:focus-visible {
+      outline: 2px solid rgba(77, 163, 255, 0.45);
+      outline-offset: 6px;
+      border-radius: 12px;
     }
 
     .buttons {
@@ -130,11 +164,14 @@
     }
 
     button {
+      appearance: none;
       border: none;
       padding: 0.75rem 1.6rem;
       border-radius: 999px;
       font-weight: 700;
+      font-size: 0.95rem;
       cursor: pointer;
+      transition: 0.12s;
     }
 
     #generateBtn {
@@ -146,6 +183,15 @@
       background: #333;
       color: #eee;
       font-size: 0.82rem;
+      padding: 0.62rem 1.25rem;
+    }
+
+    #generateBtn:hover {
+      background: #ffd95c;
+    }
+
+    #copyBtn:hover {
+      background: #444;
     }
 
     .quoteCard {
@@ -155,15 +201,17 @@
       border-radius: 14px;
       overflow: hidden;
       position: relative;
+      border: 1px solid #333;
+      background: #0f0f0f;
       background-size: cover;
       background-position: center;
-      border: 1px solid #333;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
     }
 
     .quoteOverlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 30% 30%, rgba(0,0,0,0.25), rgba(0,0,0,0.78));
+      background: radial-gradient(circle at 30% 30%, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.78));
     }
 
     .quoteText {
@@ -171,23 +219,53 @@
       inset: 0;
       display: grid;
       place-items: center;
-      padding: 48px;
+      padding: 48px 44px;
       text-align: center;
+      line-height: 1.12;
       color: #f2f2f2;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+      user-select: text;
     }
 
     .quoteText span {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      white-space: normal;
+      word-break: normal;
+      overflow-wrap: normal;
+      hyphens: none;
+      letter-spacing: 0.02em;
+      font-size: 52px;
       font-family: inherit;
+    }
+
+    /* Website label in lower-right */
+    .siteMark {
+      position: absolute;
+      right: 14px;
+      bottom: 12px;
+      z-index: 3;
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      color: rgba(255, 255, 255, 0.78);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
     }
 
     #copyStatus {
       margin-top: 0.6rem;
       font-size: 0.82rem;
       color: #9a9a9a;
+      min-height: 1em;
     }
 
-    canvas { display: none; }
+    canvas {
+      display: none;
+    }
   </style>
 </head>
 
@@ -200,7 +278,7 @@
       <strong>Herzog Scale</strong>
       <div class="sliderRow">
         <span class="sliderLabel">Wehmut</span>
-        <input type="range" id="herzogScale" min="0" max="10" step="2" value="4">
+        <input type="range" id="herzogScale" min="0" max="10" step="2" value="4" aria-label="Herzog Scale">
         <span class="sliderLabel">Sinnnichtigkeit</span>
       </div>
     </div>
@@ -209,11 +287,12 @@
       <button id="generateBtn">Generate Quote</button>
     </div>
 
-    <div id="quoteCard" class="quoteCard">
+    <div id="quoteCard" class="quoteCard" role="img" aria-label="Generated quote image">
       <div class="quoteOverlay"></div>
       <div class="quoteText">
         <span id="quoteText">Click “Generate Quote.” Or do not. The Universe is indifferent.</span>
       </div>
+      <div id="siteMark" class="siteMark"></div>
     </div>
 
     <div class="buttons">
@@ -221,7 +300,495 @@
     </div>
 
     <div id="copyStatus"></div>
+
     <canvas id="renderCanvas" width="1600" height="900"></canvas>
   </main>
+
+  <script>
+    /* ----------------------------
+       Config
+    ---------------------------- */
+    const SITE_LABEL = "thinkyfun.github.io/HerzogQuoteGenerator/";
+
+    /* ----------------------------
+       Assets
+    ---------------------------- */
+    const imageUrls = [
+      "./images/Image1.png",
+      "./images/Image2.png",
+      "./images/Image3.png",
+      "./images/Image4.png",
+      "./images/Image5.png",
+      "./images/Image6.png",
+      "./images/Image7.png",
+      "./images/Image8.png",
+      "./images/Image9.png",
+      "./images/Image10.png"
+    ];
+
+    imageUrls.forEach(u => { const i = new Image(); i.src = u; });
+
+    const fontChoices = ["Special Elite", "They Perished", "Manic Depressive"];
+
+    /* ----------------------------
+       Slider fill handling
+    ---------------------------- */
+    function setSliderProgress(sliderEl) {
+      const min = Number(sliderEl.min || 0);
+      const max = Number(sliderEl.max || 100);
+      const val = Number(sliderEl.value);
+      const pct = ((val - min) / (max - min)) * 100;
+      sliderEl.style.setProperty("--range-progress", `${pct}%`);
+    }
+
+    /* ----------------------------
+       Phrase pools
+    ---------------------------- */
+    const openings = [
+      "Consider",
+      "Observe",
+      "Notice",
+      "Witness",
+      "Do not look away from",
+      "Briefly,",
+      "In the silence,",
+      "Look closely,",
+      "Here we see",
+      "For a moment,",
+      "Inevitable,"
+    ];
+
+    const subjects = [
+      "an empty street,",
+      "this abandoned chair,",
+      "the flickering light,",
+      "a weary animal,",
+      "the cold ground,",
+      "discarded potential,",
+      "chaos and darkness,",
+      "a forgotten object,",
+      "the unmoving landscape,",
+      "the unattended doorway,",
+      "a dim corridor,"
+    ];
+
+    const observations = [
+      "a plain fact of passing time,",
+      "a quiet hint of decay,",
+      "it does not show truth,",
+      "a witness to slow collapse,",
+      "a dinosaur that does not know it is dead,",
+      "a monument to indifference,",
+      "an echo of wasted effort,",
+      "like an ancient Greek tragedy,",
+      "a ledger of small defeats,"
+    ];
+
+    const shortEndings = [
+      "and it asks nothing of us.",
+      "and it does not change because we notice.",
+      "yet we are left with only the fact of it.",
+      "so the day continues without explanation.",
+      "and it remains, quietly, what it is.",
+      "and no meaning arrives to meet it."
+    ];
+
+    const endings = [
+      "and we move on, pretending it meant something.",
+      "yet the world does not respond, not even with contempt.",
+      "as time continues without concern for our explanations.",
+      "so meaning dissolves, leaving only the habit of belief.",
+      "while the universe remains unmoved by our brief insistence.",
+      "and still we call this endurance, as if it were a virtue."
+    ];
+
+    /* ----------------------------
+       Non-repetition (recent history)
+    ---------------------------- */
+    const history = {
+      openings: [],
+      subjects: [],
+      observations: [],
+      shortEndings: [],
+      endings: [],
+      bgUrl: [],
+      font: []
+    };
+
+    function pushHistory(key, value, maxLen) {
+      if (!value) return;
+      history[key].unshift(value);
+      if (history[key].length > maxLen) history[key].length = maxLen;
+    }
+
+    const randomFrom = arr => arr[Math.floor(Math.random() * arr.length)];
+
+    function pickNonRepeating(arr, recentKey, avoidCount, maxTries = 60) {
+      if (!arr.length) return "";
+      const avoid = new Set(history[recentKey].slice(0, avoidCount));
+      for (let i = 0; i < maxTries; i++) {
+        const candidate = randomFrom(arr);
+        if (!avoid.has(candidate)) return candidate;
+      }
+      return randomFrom(arr);
+    }
+
+    function pickWeightedNonRepeating(arr, scale, recentKey, avoidCount) {
+      const pivot = Math.floor(arr.length * (scale / 10));
+      const spread = 2;
+      const min = Math.max(0, pivot - spread);
+      const max = Math.min(arr.length - 1, pivot + spread);
+      const windowArr = arr.slice(min, max + 1);
+      return pickNonRepeating(windowArr, recentKey, avoidCount);
+    }
+
+    /* ----------------------------
+       Consecutive quote repetition rule
+    ---------------------------- */
+    let lastParts = null;
+
+    function repeatedPartCount(a, b) {
+      if (!a || !b) return 0;
+      const fields = ["o", "s", "obs", "e"];
+      let count = 0;
+      for (const f of fields) {
+        const av = (a[f] || "").trim();
+        const bv = (b[f] || "").trim();
+        if (av && bv && av === bv) count++;
+      }
+      return count;
+    }
+
+    const singleWordOpenings = new Set(["Consider", "Observe", "Notice", "Witness"]);
+    let lastOpeningWasSingle = false;
+
+    function pickOpening() {
+      let o = pickNonRepeating(openings, "openings", 4);
+
+      if (lastOpeningWasSingle) {
+        for (let i = 0; i < 20; i++) {
+          const candidate = pickNonRepeating(openings, "openings", 4);
+          if (!singleWordOpenings.has(candidate)) { o = candidate; break; }
+        }
+      }
+
+      lastOpeningWasSingle = singleWordOpenings.has(o);
+      return o;
+    }
+
+    function buildQuoteOnce(scale) {
+      const o = pickOpening();
+      const s = pickWeightedNonRepeating(subjects, scale, "subjects", 3);
+
+      if (scale <= 2) {
+        const e = pickWeightedNonRepeating(shortEndings, scale, "shortEndings", 3);
+        return { quote: [o, s, e].join(" "), parts: { o, s, obs: "", e }, tier: "short" };
+      }
+
+      const obs = pickWeightedNonRepeating(observations, scale, "observations", 3);
+
+      if (scale <= 6) {
+        const e = pickWeightedNonRepeating(shortEndings, scale, "shortEndings", 3);
+        return { quote: [o, s, obs, e].join(" "), parts: { o, s, obs, e }, tier: "medium" };
+      }
+
+      const e = pickWeightedNonRepeating(endings, scale, "endings", 3);
+      return { quote: [o, s, obs, e].join(" "), parts: { o, s, obs, e }, tier: "long" };
+    }
+
+    function buildQuote(scale) {
+      const maxAttempts = 30;
+      for (let i = 0; i < maxAttempts; i++) {
+        const built = buildQuoteOnce(scale);
+        if (!lastParts) return built;
+        if (repeatedPartCount(built.parts, lastParts) <= 2) return built;
+      }
+      return buildQuoteOnce(scale);
+    }
+
+    /* ----------------------------
+       State + render
+    ---------------------------- */
+    const state = { quote: "", bgUrl: "", font: "" };
+
+    function applyQuoteCard() {
+      const card = document.getElementById("quoteCard");
+      const text = document.getElementById("quoteText");
+      const siteMark = document.getElementById("siteMark");
+
+      card.style.backgroundImage = `url("${state.bgUrl}")`;
+      text.style.fontFamily = `"${state.font}", system-ui, sans-serif`;
+      text.textContent = state.quote;
+
+      siteMark.textContent = SITE_LABEL;
+
+      document.getElementById("copyStatus").textContent = "";
+    }
+
+    function getInnerBox(el) {
+      const cs = getComputedStyle(el);
+      const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
+      const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+      return { w: el.clientWidth - padX, h: el.clientHeight - padY };
+    }
+
+    function fitQuoteTextToCard() {
+      const wrapper = document.querySelector(".quoteText");
+      const textEl = document.getElementById("quoteText");
+      const { w: maxW, h: maxH } = getInnerBox(wrapper);
+      if (maxW <= 0 || maxH <= 0) return;
+
+      textEl.style.maxWidth = maxW + "px";
+
+      let lo = 18, hi = 84, best = lo;
+      const fits = (size) => {
+        textEl.style.fontSize = size + "px";
+        return textEl.scrollWidth <= maxW + 1 && textEl.scrollHeight <= maxH + 1;
+      };
+
+      if (fits(hi)) { textEl.style.fontSize = hi + "px"; return; }
+
+      while (lo <= hi) {
+        const mid = (lo + hi) >> 1;
+        if (fits(mid)) { best = mid; lo = mid + 1; }
+        else { hi = mid - 1; }
+      }
+      textEl.style.fontSize = best + "px";
+    }
+
+    async function generate() {
+      const scaleEl = document.getElementById("herzogScale");
+      const scale = Number(scaleEl.value);
+      setSliderProgress(scaleEl);
+
+      const built = buildQuote(scale);
+      state.quote = built.quote;
+
+      state.bgUrl = pickNonRepeating(imageUrls, "bgUrl", 2);
+      state.font = pickNonRepeating(fontChoices, "font", 2);
+
+      try { await document.fonts.load(`48px "${state.font}"`); } catch { }
+
+      applyQuoteCard();
+      requestAnimationFrame(() => fitQuoteTextToCard());
+
+      pushHistory("openings", built.parts.o, 10);
+      pushHistory("subjects", built.parts.s, 6);
+      if (built.parts.obs) pushHistory("observations", built.parts.obs, 6);
+
+      if (built.tier === "long") pushHistory("endings", built.parts.e, 6);
+      else pushHistory("shortEndings", built.parts.e, 6);
+
+      pushHistory("bgUrl", state.bgUrl, 4);
+      pushHistory("font", state.font, 4);
+
+      lastParts = { ...built.parts };
+    }
+
+    /* ----------------------------
+       Canvas export (copy/share)
+    ---------------------------- */
+    function loadImage(url) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = url;
+      });
+    }
+
+    function drawCover(ctx, img, w, h) {
+      const iw = img.naturalWidth || img.width;
+      const ih = img.naturalHeight || img.height;
+      const s = Math.max(w / iw, h / ih);
+      const sw = iw * s, sh = ih * s;
+      const sx = (w - sw) / 2, sy = (h - sh) / 2;
+      ctx.drawImage(img, sx, sy, sw, sh);
+    }
+
+    function wrapLines(ctx, text, maxWidth) {
+      const words = text.split(/\s+/);
+      const lines = [];
+      let line = "";
+      for (const word of words) {
+        const test = line ? (line + " " + word) : word;
+        if (ctx.measureText(test).width <= maxWidth) line = test;
+        else {
+          if (line) lines.push(line);
+          line = word;
+        }
+      }
+      if (line) lines.push(line);
+      return lines;
+    }
+
+    function drawSiteMark(ctx, W, H) {
+      const pad = Math.round(W * 0.018);
+      const fontSize = Math.max(18, Math.round(W * 0.014));
+
+      ctx.save();
+      ctx.textAlign = "right";
+      ctx.textBaseline = "alphabetic";
+      ctx.font = `600 ${fontSize}px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`;
+
+      ctx.shadowColor = "rgba(0,0,0,0.85)";
+      ctx.shadowBlur = 18;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 3;
+
+      ctx.fillStyle = "rgba(255,255,255,0.78)";
+      ctx.fillText(SITE_LABEL, W - pad, H - pad);
+
+      ctx.restore();
+    }
+
+    async function renderQuoteToCanvas() {
+      const canvas = document.getElementById("renderCanvas");
+      const ctx = canvas.getContext("2d");
+      const W = canvas.width, H = canvas.height;
+
+      ctx.clearRect(0, 0, W, H);
+
+      const bg = await loadImage(state.bgUrl);
+      drawCover(ctx, bg, W, H);
+
+      const grd = ctx.createRadialGradient(W * 0.30, H * 0.30, 10, W * 0.30, H * 0.30, Math.max(W, H));
+      grd.addColorStop(0, "rgba(0,0,0,0.25)");
+      grd.addColorStop(1, "rgba(0,0,0,0.78)");
+      ctx.fillStyle = grd;
+      ctx.fillRect(0, 0, W, H);
+
+      const padX = Math.round(W * 0.065);
+      const padY = Math.round(H * 0.125);
+      const maxTextWidth = W - padX * 2;
+      const maxTextHeight = H - padY * 2;
+
+      let fontSize = 84;
+      const minFont = 24;
+
+      try { await document.fonts.load(`${fontSize}px "${state.font}"`); } catch { }
+
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      const fits = (size) => {
+        ctx.font = `700 ${size}px "${state.font}", system-ui, sans-serif`;
+        const lines = wrapLines(ctx, state.quote, maxTextWidth);
+        const lineHeight = Math.round(size * 1.15);
+        return (lines.length * lineHeight) <= maxTextHeight;
+      };
+
+      while (fontSize > minFont && !fits(fontSize)) fontSize -= 2;
+
+      ctx.font = `700 ${fontSize}px "${state.font}", system-ui, sans-serif`;
+      const lines = wrapLines(ctx, state.quote, maxTextWidth);
+      const lineHeight = Math.round(fontSize * 1.15);
+      const totalHeight = lines.length * lineHeight;
+
+      ctx.shadowColor = "rgba(0,0,0,0.85)";
+      ctx.shadowBlur = 18;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 3;
+
+      ctx.fillStyle = "#f2f2f2";
+
+      const startY = (H / 2) - (totalHeight / 2) + (lineHeight / 2);
+      for (let i = 0; i < lines.length; i++) {
+        ctx.fillText(lines[i], W / 2, startY + i * lineHeight);
+      }
+
+      ctx.shadowColor = "transparent";
+      ctx.shadowBlur = 0;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 0;
+
+      drawSiteMark(ctx, W, H);
+
+      return canvas;
+    }
+
+    function downloadBlob(blob, filename) {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    async function canvasToPngBlob(canvas) {
+      if (canvas.toBlob) {
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, "image/png", 0.92));
+        if (!blob) throw new Error("PNG blob creation failed");
+        return blob;
+      }
+      const dataUrl = canvas.toDataURL("image/png");
+      const res = await fetch(dataUrl);
+      const blob = await res.blob();
+      if (!blob || !blob.size) throw new Error("PNG blob creation failed (fallback)");
+      return blob;
+    }
+
+    async function copyQuoteImage() {
+      const status = document.getElementById("copyStatus");
+      status.textContent = "";
+
+      let blob;
+      try {
+        const canvas = await renderQuoteToCanvas();
+        blob = await canvasToPngBlob(canvas);
+      } catch {
+        status.textContent = "Could not export image — try generating again.";
+        setTimeout(() => { status.textContent = ""; }, 2200);
+        return;
+      }
+
+      if (navigator.clipboard && window.ClipboardItem) {
+        try {
+          await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+          status.textContent = "Copied image to clipboard.";
+          setTimeout(() => { status.textContent = ""; }, 2200);
+          return;
+        } catch { /* fall through */ }
+      }
+
+      try {
+        const file = new File([blob], "herzog-quote.png", { type: "image/png" });
+        if (navigator.canShare && navigator.canShare({ files: [file] }) && navigator.share) {
+          await navigator.share({ files: [file], title: "Herzog-ish Oracle" });
+          status.textContent = "Opened share sheet.";
+          setTimeout(() => { status.textContent = ""; }, 2200);
+          return;
+        }
+      } catch { /* fall through */ }
+
+      downloadBlob(blob, "herzog-quote.png");
+      status.textContent = "Downloaded PNG instead.";
+      setTimeout(() => { status.textContent = ""; }, 2200);
+    }
+
+    /* ----------------------------
+       Wire up UI
+    ---------------------------- */
+    const scaleEl = document.getElementById("herzogScale");
+
+    document.getElementById("generateBtn").addEventListener("click", generate);
+    document.getElementById("copyBtn").addEventListener("click", copyQuoteImage);
+
+    scaleEl.addEventListener("input", () => {
+      setSliderProgress(scaleEl);
+      generate();
+    });
+
+    window.addEventListener("resize", () => requestAnimationFrame(fitQuoteTextToCard));
+
+    // ✅ Initialize (this is what makes quotes actually generate on load)
+    setSliderProgress(scaleEl);
+    generate();
+  </script>
 </body>
+
 </html>
